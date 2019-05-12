@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  mongo:
+    image: mongo
+    container_name: db
+    expose:
+      - 27017
+  client:
+    depends_on:
+      - mongo
+    build: clientScript/.
+    container_name: client

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker exec -it db mongorestore --db restored --verbose dump/fake-data/
