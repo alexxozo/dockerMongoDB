@@ -28,9 +28,19 @@ chmod +x <SCRIPT-NAME>
 2. Right now you database container is up and running and has been populated with fake data (db:fake-data, collection:fake) by running a python script in the client container 
 which then exited.
 
-3. To backup all the data from db 'fake-data' we will use mongodump with the --gzip parameter which will compress the data before storing it. To do 
-that you will need to run the following command:
+3. To backup all the data from db 'fake-data' we will use mongodump with the --gzip parameter which will compress the data before storing it. To do that you will need to run the following:
+### This command will create a folder named 'fake-data' with the compressed data from the db 'fake-data' (you can change the name of the db in the script parameter)
 ```
 ./backup-script fake-data
 ```
 After the process is complete you will get the backup files saved in the 'clientScript/fake-data' folder on your local system.
+
+4. To restore your database you can use 2 scripts:
+### If the backup directory is located in the db container (if you just ran the 'backup-script')
+```
+./restore-container-script fake-data
+```
+### If the backup directory is located on the local disk in the 'clientScript' directory
+```
+./restore-container-local-script fake-data restored-data
+```
