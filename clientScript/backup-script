@@ -1,4 +1,4 @@
 #!/bin/bash
 
 docker exec -it db mongodump -h localhost -d $1 --gzip
-docker cp db:dump/fake-data ./
+docker cp db:dump/$1 ./
