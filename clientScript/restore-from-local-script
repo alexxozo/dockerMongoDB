@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker exec -it db mkdir dump/$1
+docker exec -it db mkdir -p dump/$1
 docker cp ./$1 db:dump
 docker exec -it db mongorestore --db $2 --verbose dump/fake-data/
