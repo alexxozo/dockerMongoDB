@@ -44,3 +44,10 @@ After the process is complete you will get the backup files saved in the 'client
 ```
 ./restore-container-local-script fake-data restored-data
 ```
+
+5. All these commands need to be ran when the databse container is up! Also if you want to access the database shell and see
+what changes have been made you can run the following command in another terminal: 
+````
+docker exec -it db /bin/bash
+
+````
