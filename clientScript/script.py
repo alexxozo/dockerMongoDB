@@ -22,7 +22,7 @@ def create_names(fake):
         )
 
         print ("id: {}".format(str(result.inserted_id)))
-        time.sleep(1)
+        time.sleep(0.5)
 
 if __name__ == '__main__':
     print('Hello from Client Container')
